@@ -25,7 +25,7 @@ function App() {
             "Type": "series",
             "Poster": "https://m.media-amazon.com/images/M/MV5BOGRlNmMzY2ItNTEzYi00MmVkLWEzZTctNzJkY2VmZmQzM2EyXkEyXkFqcGdeQXVyNjczODE4OTA@._V1_SX300.jpg"
         },
-      }
+  ])
   return (
     <div className="">
       <h1>hello world</h1>

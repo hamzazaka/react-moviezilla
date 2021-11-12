@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import { useState } from 'react';
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import MovieList from './components/MovieList';
 
 function App() {
   const [movies, setmovies] = useState([
@@ -28,7 +30,7 @@ function App() {
   ])
   return (
     <div className="">
-      <h1>hello world</h1>
+      <MovieList movies={movies} />
     </div>
   );
 }

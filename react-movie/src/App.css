@@ -1,5 +1,10 @@
-.movie{
-  padding: 15px;
-  background-color: beige;
-  max-width: 370px;
+
+body{
+  background: black;
+  color: white;
+}
+
+.movie-app > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
 }

@@ -28,9 +28,13 @@ function App() {
             "Poster": "https://m.media-amazon.com/images/M/MV5BOGRlNmMzY2ItNTEzYi00MmVkLWEzZTctNzJkY2VmZmQzM2EyXkEyXkFqcGdeQXVyNjczODE4OTA@._V1_SX300.jpg"
         },
   ])
+  console.log(movies)
   return (
-    <div className="">
+    <div className="container-fluid movie-app">
+      <div className='row'>
       <MovieList movies={movies} />
+      </div>
+      
     </div>
   );
 }

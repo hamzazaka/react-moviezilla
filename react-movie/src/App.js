@@ -33,7 +33,7 @@ function App() {
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
       </div>
       <div className='row'>
-      <MovieList movies={movies} FavComponent={AddFav} />
+      <MovieList movies={movies} FavComponent={AddFav} fav />
       </div>
       
     </div>

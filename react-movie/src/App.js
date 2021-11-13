@@ -6,6 +6,7 @@ import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
 import AddFav from './components/AddFav';
+import RemoveFav from './components/RemoveFav';
 
 function App() {
   const [movies, setmovies] = useState([]);
@@ -26,8 +27,24 @@ function App() {
     getMovieRequest(searchValue)
   }, [searchValue])
 
-  const AddFavMovie=(movies)=>{
-    const newFavList=[...fav,movies]
+  useEffect(()=>{
+    const movieFav=JSON.parse(localStorage.getItem('react-movie-app-favourite'))
+
+    setFav(movieFav)
+  },[])
+
+  const saveToLocalStorage=(items)=>{
+    localStorage.setItem('react-movie-app-favourite',JSON.stringify(items))
+  }
+
+  const AddFavMovie=(movie)=>{
+    const newFavList=[...fav,movie]
+    setFav(newFavList)
+    saveToLocalStorage(newFavList)
+  }
+
+  const removeFavMovie=(movie)=>{
+    const newFavList=fav.filter(f=>f.imdbID !==movie.imdbID);
     setFav(newFavList)
   }
 
@@ -44,7 +61,7 @@ function App() {
         <MovieListHeading headings='Favourites'/>
       </div>
       <div className="row">
-     {fav&& <MovieList movies={fav} FavComponent={AddFav} handleFavouriteClick={AddFavMovie} />}
+     {fav&& <MovieList movies={fav} FavComponent={RemoveFav} handleFavouriteClick={removeFavMovie} />}
 
       </div>
       

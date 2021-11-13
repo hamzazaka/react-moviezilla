@@ -26,6 +26,11 @@ function App() {
     getMovieRequest(searchValue)
   }, [searchValue])
 
+  const AddFavMovie=(movies)=>{
+    const newFavList=[...fav,movies]
+    setFav(newFavList)
+  }
+
   return (
     <div className="container-fluid movie-app">
       <div className="row d-flex align-items-center mt-4 mb-4">
@@ -33,7 +38,14 @@ function App() {
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
       </div>
       <div className='row'>
-      <MovieList movies={movies} FavComponent={AddFav} fav />
+      <MovieList movies={movies} FavComponent={AddFav} handleFavouriteClick={AddFavMovie} />
+      </div>
+          <div className="row d-flex align-items-center mt-4 mb-4">
+        <MovieListHeading headings='Favourites'/>
+      </div>
+      <div className="row">
+     {fav&& <MovieList movies={fav} FavComponent={AddFav} handleFavouriteClick={AddFavMovie} />}
+
       </div>
       
     </div>

@@ -4,10 +4,7 @@ export default function Counter() {
     const [click,setClick]=useState(1);
     const[random,setRandom]=useState(1)
     const num=[1,2,3,4,5];
-
-     const newnum = num.join(' ');
-     console.log(newnum)
-    let hello= Math.trunc(Math.random()*4)
+    let hello= num[Math.floor(Math.random()*num.length)]
 
     const clickime=()=>{
         if(hello===0) return 10

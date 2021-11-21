@@ -2,8 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import Counter from './components/Counter';
 import Employee from './components/Employee';
+import { useState } from 'react';
 
 function App() {
+  const [count,setCount]=useState(0);
   const data=[
     {
       name:"hamza",
@@ -33,10 +35,10 @@ function App() {
   return (
     <div className="App">
       <h1>Company Directory</h1>
-     {data.map(employee=>{
-       const {name,age}=employee
+     {data.map((employee,idx)=>{
+      //  const {name,age}=employee
        return (
-        <Employee name={name} age={age}/>
+        <Employee key={idx} {...employee}/>
        )
      })}
     </div>

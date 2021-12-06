@@ -1,1 +1,33 @@
 
+* {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+}
+.navbar{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(218, 216, 216);
+}
+.navbar h1{
+    color: red;
+}
+.navbar .links{
+    margin-left: auto;
+}
+.navbar a{
+    margin-left: 16px;
+    text-decoration: none;
+    padding: 6px;
+}
+.navbar a:hover{
+    color: aqua;
+}
+.content{
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}

@@ -1,20 +1,17 @@
 import React, { useState } from 'react'
 
 export default function Home() {
-    const [click,setClick]=useState('')
-    const handleClick=()=>{
-        console.log('hello world')
-        setClick('hamza')
+    
+    const handleClick=(name,e)=>{
+        console.log('hello world ' +name,e.target)
+        
 
     }
 
     return (
         <div className='home'>
-            <h2>Home page {click}</h2>
-            <form action="" onSubmit={handleClick}>
-                <input type="text" placeholder='type your name' id="" />
-                <button >Click</button>
-            </form>
+            <h2>Home page </h2>
+            <button onClick={(e)=>handleClick('hamza',e)}>click me</button>
         </div>
     )
 }

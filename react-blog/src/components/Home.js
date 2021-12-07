@@ -1,45 +1,19 @@
 import React, { useState } from 'react'
 
 export default function Home() {
-    const [click,setClick]=useState([
-        {
-            'name':"hamza zaka",
-              'age':18,
-              'class':6
-        },
-         {
-            'name':"zaka",
-              'age':28,
-              'class':16
-        },
-        {
-            'name':"zaka",
-              'age':28,
-              'class':16
-        },
-         {
-            'name':"zaka",
-              'age':28,
-              'class':16
-        },
+    const [blogs,setBlogs]=useState([
+        {title:"my new webstie",body:'hello htis is my ebsie',author:'hamza',id:1},
+        {title:"my birthday party",body:'my birthday party went really well and i really enjoyed working there',author:'noman',id:2},
+        {title:"software engineer",body:'I am a Front End engineer',author:'mario',id:3},
     ])
-    
-    const handleClick=(name,e)=>{
-        console.log('hello world ' +name,e.target)
-        setClick(name)
-    }
-
     return (
         <div className='home'>
-            <h4>{click.map(a=>{
-                return(
-                    <div>
-                    <h4>{a.name}</h4>
-                    <p>{a.age}</p>
-                    </div>
-                )
-            })} </h4>
-            <button onClick={(e)=>handleClick('hamza',e)}>click me</button>
+            {blogs.map((a)=>(
+                <div className="blog-preview" key={a.id}>
+                    <h2>{a.title}</h2>
+                    <p>Written by {a.author}</p>
+                </div>
+            ))}
         </div>
     )
 }

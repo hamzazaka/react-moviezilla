@@ -24,7 +24,7 @@ export default function Home() {
 
     return (
         <div className='home'>
-          <Blog blogs={blogs} title='Old Blogs' handleDelete={handleDelete}/>
+        {blogs && <Blog blogs={blogs} title='Old Blogs' handleDelete={handleDelete}/>}
         </div>
     )
 }

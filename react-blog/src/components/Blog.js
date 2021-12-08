@@ -3,6 +3,7 @@ import React from 'react'
 export default function blog({blogs,title,handleDelete}) {
     return (
         <div className='blog-list'>
+            
             <h2 >{title}</h2>
               {blogs.map((a)=>(
                 <div className="blog-preview" key={a.id}>

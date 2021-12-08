@@ -2,18 +2,22 @@
 import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom' 
 
 function App() {
-  const title='welcome to new blog';
-  const likes=50;
-  const person={name:'hamza'}
   return (
+    <Router>
     <div className="App">
        <Navbar/>
      <div className="content">
-       <Home/>
+       <Switch>
+         <Route path='/'>
+            <Home/>
+         </Route>
+       </Switch>
      </div>
     </div>
+    </Router>
   );
 }
 

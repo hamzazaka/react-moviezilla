@@ -1,0 +1,6 @@
+{
+    "blogs":[
+        {"title":"my new webstie","body":"hello htis is my ebsie","author":"hamza","id":1},
+        {"title":"My birthday ","body":"Welcome to my birthday","author":"raj","id":2}
+    ]
+}

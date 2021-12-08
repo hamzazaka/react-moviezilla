@@ -2,13 +2,9 @@ import React, { useState,useEffect } from 'react'
 import Blog from './Blog'
 
 export default function Home() {
-    const [blogs,setBlogs]=useState([])
 
-    const handleDelete=(id)=>{
-        const newBlogs=blogs.filter(a=>a.id!==id)
-        setBlogs(newBlogs)
-        // console.log(id) 
-    }
+    const [blogs,setBlogs]=useState([])
+    const [isPending,setisPending]=useState(true);
 
     const getData= async()=>{
         const blogURL='http://localhost:8000/blogs';
@@ -16,6 +12,7 @@ export default function Home() {
         const data=await response.json()
         console.log(data)
         setBlogs(data)
+        setisPending(false)
     }
 
     useEffect(()=>{
@@ -24,7 +21,8 @@ export default function Home() {
 
     return (
         <div className='home'>
-        {blogs && <Blog blogs={blogs} title='Old Blogs' handleDelete={handleDelete}/>}
+            {isPending && <div>Loading ....</div>}
+        {blogs && <Blog blogs={blogs} title='Old Blogs'/>}
         </div>
     )
 }

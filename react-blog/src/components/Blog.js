@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function blog({blogs,title,handleDelete}) {
+export default function blog({blogs,title}) {
     return (
         <div className='blog-list'>
             
@@ -9,7 +9,6 @@ export default function blog({blogs,title,handleDelete}) {
                 <div className="blog-preview" key={a.id}>
                     <h2>{a.title}</h2>
                     <p>Written by {a.author}</p>
-                    <button onClick={()=>handleDelete(a.id)}>Delete Blog</button>
                 </div>
             ))}
         </div>
